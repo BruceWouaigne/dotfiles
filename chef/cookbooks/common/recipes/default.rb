@@ -22,7 +22,8 @@
     'exuberant-ctags',
     'tmux',
     'chromium-browser',
-    'vlc'
+    'vlc',
+    'ubuntu-tweak'
 ].each do |pkg|
     package pkg do
         action :install
