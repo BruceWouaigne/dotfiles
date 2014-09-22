@@ -23,7 +23,8 @@
     'tmux',
     'chromium-browser',
     'vlc',
-    'ubuntu-tweak'
+    'ubuntu-tweak',
+    'light-themes'
 ].each do |pkg|
     package pkg do
         action :install
@@ -47,10 +48,12 @@ end
 
 rootdir = run_context.cookbook_collection[cookbook_name].root_dir + '/../../..'
 
-execute 'cd ' + rootdir + ' && git submodule init'
-
 link '/home/bruce/.fonts/Droid+Sans+Mono+for+Powerline.otf' do
     to rootdir + '/fonts/Droid+Sans+Mono+for+Powerline.otf'
+end
+
+link '/home/bruce/.fonts/DejaVuSansMono-Powerline.ttf' do
+    to rootdir + '/fonts/DejaVuSansMono-Powerline.ttf'
 end
 
 link '/home/bruce/.vim' do
@@ -81,4 +84,5 @@ link '/home/bruce/.gitignore_global' do
     to rootdir + '/git/.gitignore_global'
 end
 
-#execute 'cat /home/bruce/dotfiles/.bashrc >> /home/bruce/.bashrc'
+execute 'cat ' + rootdir + '/bash/.bashrc >> /home/bruce/.bashrc'
+execute 'fc-cache -vf'
