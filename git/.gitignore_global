@@ -2,3 +2,4 @@ tags
 .netrwhist
 behat.yml
 node_modules
+chef-stacktrace.out
