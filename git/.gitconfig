@@ -1,0 +1,11 @@
+[alias]
+    st = status
+[color]
+    ui = true
+[user]
+    name = BruceWouaigne
+    email = charrier.denis@gmail.com
+[core]
+    excludesfile = /home/bruce/.gitignore_global
+[web]
+    browser = chrome
