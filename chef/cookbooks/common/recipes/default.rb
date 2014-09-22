@@ -22,6 +22,7 @@
     'exuberant-ctags',
     'tmux',
     'chromium-browser',
+    'pepperflashplugin-nonfree',
     'vlc',
     'ubuntu-tweak',
     'light-themes'
@@ -55,6 +56,8 @@ end
 link '/home/bruce/.fonts/DejaVuSansMono-Powerline.ttf' do
     to rootdir + '/fonts/DejaVuSansMono-Powerline.ttf'
 end
+
+execute 'cd ' + rootdir + ' && git submodule update --init'
 
 link '/home/bruce/.vim' do
     to rootdir + '/vim'
