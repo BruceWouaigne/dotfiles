@@ -3,6 +3,7 @@
     'apache2',
     'mysql-server',
     'php5',
+    'php5-dev',
     'php5-intl',
     'php5-mysql',
     'php5-curl',
