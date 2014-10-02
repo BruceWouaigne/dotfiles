@@ -41,3 +41,5 @@ prompt() {
 PROMPT_COMMAND=prompt
 
 alias tmux='tmux -2'
+alias docker='sudo docker'
+alias wireshark='gksu wireshark'
