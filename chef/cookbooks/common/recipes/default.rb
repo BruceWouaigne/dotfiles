@@ -90,3 +90,4 @@ end
 
 execute 'cat ' + rootdir + '/bash/.bashrc >> /home/bruce/.bashrc'
 execute 'fc-cache -vf'
+execute 'curl -sSL https://get.docker.com/ubuntu/ | sh'
