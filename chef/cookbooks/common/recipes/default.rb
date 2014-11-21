@@ -91,3 +91,4 @@ end
 execute 'cat ' + rootdir + '/bash/.bashrc >> /home/bruce/.bashrc'
 execute 'fc-cache -vf'
 execute 'curl -sSL https://get.docker.com/ubuntu/ | sh'
+execute 'curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin'
