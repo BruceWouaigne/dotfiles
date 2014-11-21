@@ -1,3 +1,5 @@
+execute 'add-apt-repository -y ppa:chris-lea/node.js && apt-get update'
+
 [
     'curl',
     'apache2',
@@ -27,7 +29,8 @@
     'vlc',
     'ubuntu-tweak',
     'light-themes',
-    'mysql-workbench'
+    'mysql-workbench',
+    'nodejs'
 ].each do |pkg|
     package pkg do
         action :install
