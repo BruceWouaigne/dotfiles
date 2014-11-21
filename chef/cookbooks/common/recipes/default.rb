@@ -26,7 +26,8 @@
     'pepperflashplugin-nonfree',
     'vlc',
     'ubuntu-tweak',
-    'light-themes'
+    'light-themes',
+    'mysql-workbench'
 ].each do |pkg|
     package pkg do
         action :install
