@@ -1,4 +1,6 @@
-execute 'add-apt-repository -y ppa:chris-lea/node.js && apt-get update'
+execute 'add-apt-repository -y ppa:chris-lea/node.js'
+execute 'add-apt-repository -y ppa:tualatrix/ppa'
+execute 'apt-get -y update'
 
 [
     'curl',
@@ -30,7 +32,9 @@ execute 'add-apt-repository -y ppa:chris-lea/node.js && apt-get update'
     'ubuntu-tweak',
     'light-themes',
     'mysql-workbench',
-    'nodejs'
+    'nodejs',
+    'gimp',
+    'inkscape'
 ].each do |pkg|
     package pkg do
         action :install
@@ -97,3 +101,4 @@ execute 'fc-cache -vf'
 execute 'curl -sSL https://get.docker.com/ubuntu/ | sh'
 execute 'curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin'
 execute 'gem install compass'
+execute 'source ~/.bashrc'
