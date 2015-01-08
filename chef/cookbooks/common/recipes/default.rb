@@ -9,7 +9,6 @@ execute 'apt-get -y update'
     'php5',
     'php5-dev',
     'php5-intl',
-    'php5-mysql',
     'php5-curl',
     'php5-xdebug',
     'php-apc',
@@ -101,4 +100,5 @@ execute 'fc-cache -vf'
 execute 'curl -sSL https://get.docker.com/ubuntu/ | sh'
 execute 'curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin'
 execute 'gem install compass'
-execute 'source ~/.bashrc'
+execute 'source /home/bruce/.bashrc'
+execute 'pip install --update awscli'
