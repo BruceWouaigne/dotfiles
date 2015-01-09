@@ -11,6 +11,7 @@ execute 'apt-get -y update'
     'php5-intl',
     'php5-curl',
     'php5-xdebug',
+    'php5-gearman',
     'php-apc',
     'php-pear',
     'python',
@@ -102,3 +103,4 @@ execute 'curl -sS https://getcomposer.org/installer | php -- --filename=composer
 execute 'gem install compass'
 execute 'source /home/bruce/.bashrc'
 execute 'pip install --update awscli'
+execute 'a2enmod rewrite'
