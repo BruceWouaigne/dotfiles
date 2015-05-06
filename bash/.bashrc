@@ -13,25 +13,25 @@ prompt() {
 
     if [ $last_status -eq "0" ]
     then
-        smiley="${color_start}☺  \W"
+        smiley="${color_start} ☺ \W"
     else
-        smiley="${color_start_error}☹  \W"
+        smiley="${color_start_error} ☹ \W"
     fi
 
     if [ -z "$git_branch" ]
     then
         if [ $last_status -eq "0" ]
         then
-            git="${color_arrow}⮀";
+            git="${color_arrow}";
         else
-            git="${color_arrow_error}⮀";
+            git="${color_arrow_error}";
         fi
     else
         if [ $last_status -eq "0" ]
         then
-            git="${color_arrow_to_git}⮀ ${color_git}${git_branch}${color_git_arrow}⮀"
+            git="${color_arrow_to_git} ${color_git}${git_branch}${color_git_arrow}"
         else
-            git="${color_arrow_to_git_error}⮀ ${color_git}${git_branch}${color_git_arrow}⮀"
+            git="${color_arrow_to_git_error} ${color_git}${git_branch}${color_git_arrow}"
         fi
     fi
 
@@ -40,6 +40,5 @@ prompt() {
 
 PROMPT_COMMAND=prompt
 
-alias tmux='tmux -2'
-alias docker='sudo docker'
-alias wireshark='gksu wireshark&'
+export CLICOLOR=1
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
