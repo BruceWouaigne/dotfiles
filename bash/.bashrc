@@ -42,3 +42,5 @@ PROMPT_COMMAND=prompt
 
 export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
