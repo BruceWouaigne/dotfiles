@@ -4,6 +4,7 @@ silent! call Helptags()
 "
 " General behavior
 "
+set encoding=utf-8
 set nocompatible                " Use vim defaults
 let mapleader=","               " Use the comma as leader
 set history=1000                " Increase history
@@ -42,8 +43,8 @@ noremap <Leader>e :call PhpExpandClass()<CR>
 
 set tags+=vendor.tags
 
-let g:PowerLine_cache_file="/tmp/powerline.cache"
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,twig autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
