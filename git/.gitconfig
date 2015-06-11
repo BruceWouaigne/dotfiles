@@ -6,6 +6,11 @@
     name = BruceWouaigne
     email = charrier.denis@gmail.com
 [core]
-    excludesfile = /home/bruce/.gitignore_global
+    excludesfile = /Users/bruce/.gitignore_global
 [web]
     browser = chrome
+[mergetool]
+    keepTemporaries = false
+[merge]
+    tool = kdiff3
+    #tool = opendiff

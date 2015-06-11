@@ -15,7 +15,7 @@ set incsearch                   " Highlight matches as you type.
 set hlsearch                    " Highlight matches.
 set wildmenu                    " Better completion
 set wildmode=list:longest       " BASH style completion
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/prod/**,**/cache/dev/**,**/cache/test/**,**/logs/**,**/zend/**,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
 set nobackup                    " Don't make a backup before overwriting a file.
 set nowritebackup               " And again.
 set noswapfile                  " Use an SCM instead of swap files
