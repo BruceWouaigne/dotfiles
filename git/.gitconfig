@@ -12,5 +12,6 @@
 [mergetool]
     keepTemporaries = false
 [merge]
-    tool = kdiff3
+    tool = meld
+    #tool = kdiff3
     #tool = opendiff
