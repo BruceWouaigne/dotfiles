@@ -24,6 +24,7 @@ set hidden
 set laststatus=2
 set list
 set listchars=nbsp:☹
+set clipboard=unnamedplus
 
 if has("gui_running")
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
