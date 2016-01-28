@@ -4,4 +4,5 @@ behat.yml
 node_modules
 chef-stacktrace.out
 chef-client-running.pid
+*.pyc
 .DS_Store

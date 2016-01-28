@@ -44,16 +44,21 @@ if [ -f ~/dotfiles/git/git-completion.bash ]; then
     . ~/dotfiles/git/git-completion.bash
 fi
 
+export PATH=${PATH}:/Users/bruce/Library/Android/sdk/plateform-tools:/Users/bruce/Library/Android/sdk/tools
 export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-export GREP_OPTIONS='--color=always'
+#export GREP_OPTIONS='--color=always'
 #export GREP_COLOR='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
 alias ll='ls -al'
 alias tailf='tail -f'
+alias grep='grep --color=always'
 alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.restart='nginx.stop && nginx.start'
 alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
 alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+alias mongodb.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
+alias mongodb.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
+alias mongodb.restart='mongodb.stop && mongodb.start'

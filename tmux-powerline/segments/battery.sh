@@ -71,7 +71,7 @@ __battery_osx() {
 				if [[ "$extconnect" == "Yes" ]]; then
 					echo "$charge"
 				else
-					if [[ $charge -lt 50 ]]; then
+					if [[ $charge -lt 20 ]]; then
 						echo -n "#[fg=red]"
 					fi
 					echo "$charge"

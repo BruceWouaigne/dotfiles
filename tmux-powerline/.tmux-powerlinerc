@@ -25,7 +25,7 @@
 
 # date.sh {
 	# date(1) format for the date. If you don't, for some reason, like ISO 8601 format you might want to have "%D" or "%m/%d/%Y".
-	export TMUX_POWERLINE_SEG_DATE_FORMAT="%F"
+	export TMUX_POWERLINE_SEG_DATE_FORMAT="%d/%m/%Y"
 # }
 
 # earthquake.sh {
@@ -131,5 +131,5 @@
 	# 1. Go to Yahoo weather http://weather.yahoo.com/
 	# 2. Find the weather for you location
 	# 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the numbers "12796587"
-	export TMUX_POWERLINE_SEG_WEATHER_LOCATION="613858"
+	export TMUX_POWERLINE_SEG_WEATHER_LOCATION="609125"
 # }

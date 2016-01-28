@@ -24,7 +24,9 @@ set hidden
 set laststatus=2
 set list
 set listchars=nbsp:☹
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+"
+let g:gitgutter_escape_grep = 1
 
 if has("gui_running")
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
