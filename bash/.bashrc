@@ -1,14 +1,14 @@
 prompt() {
     last_status="$?"
     color_end="\[\e[0;m\]"
-    color_arrow="\[\e[1;48;5;234;38;5;24m\]"
-    color_arrow_error="\[\e[1;48;5;234;38;5;196m\]"
+    color_arrow="\[\e[1;48;5;235;38;5;24m\]"
+    color_arrow_error="\[\e[1;48;5;235;38;5;196m\]"
     color_arrow_to_git="\[\e[1;48;5;237;38;5;24m\]"
     color_arrow_to_git_error="\[\e[1;48;5;237;38;5;196m\]"
     color_start="\[\e[1;48;5;24;38;5;254m\]"
     color_start_error="\[\e[1;48;5;196;38;5;254m\]"
     color_git="\[\e[1;48;5;237;38;5;253m\]"
-    color_git_arrow="\[\e[1;48;5;234;38;5;237m\]"
+    color_git_arrow="\[\e[1;48;5;235;38;5;237m\]"
     git_branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
     if [ $last_status -eq "0" ]
@@ -50,6 +50,7 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 #export GREP_OPTIONS='--color=always'
 #export GREP_COLOR='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
+alias vi='vim'
 alias ll='ls -al'
 alias tailf='tail -f'
 alias grep='grep --color=always'
