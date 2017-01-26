@@ -63,3 +63,6 @@ alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 alias mongodb.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
 alias mongodb.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
 alias mongodb.restart='mongodb.stop && mongodb.start'
+alias postgres.start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias postgres.stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias postgres.restart='postgres.stop && postgres.start'
