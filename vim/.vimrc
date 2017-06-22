@@ -24,7 +24,7 @@ set hidden
 set laststatus=2
 set list
 set listchars=nbsp:☹
-"set clipboard=unnamedplus
+set clipboard=unnamed
 "
 let g:gitgutter_escape_grep = 1
 
