@@ -3,8 +3,8 @@
 [color]
     ui = true
 [user]
-    name = BruceWouaigne
-    email = charrier.denis@gmail.com
+    name = dcharrier
+    email = dcharrier@spotify.com
 [core]
     excludesfile = ~/.gitignore_global
 [web]

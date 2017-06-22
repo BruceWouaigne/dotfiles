@@ -66,3 +66,9 @@ alias mongodb.restart='mongodb.stop && mongodb.start'
 alias postgres.start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias postgres.stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias postgres.restart='postgres.stop && postgres.start'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dcharrier/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/dcharrier/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dcharrier/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/dcharrier/Downloads/google-cloud-sdk/completion.bash.inc'; fi
