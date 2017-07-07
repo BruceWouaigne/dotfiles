@@ -50,7 +50,8 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 #export GREP_OPTIONS='--color=always'
 #export GREP_COLOR='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
-alias vi='vim'
+alias vi='RUBYOPT="-W0" vim'
+alias vim='RUBYOPT="-W0" vim'
 alias ll='ls -al'
 alias tailf='tail -f'
 alias grep='grep --color=always'
