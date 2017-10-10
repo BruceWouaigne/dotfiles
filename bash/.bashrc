@@ -52,6 +52,7 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 alias vi='RUBYOPT="-W0" vim'
 alias vim='RUBYOPT="-W0" vim'
+alias eclim="$ECLIPSE_HOME/eclimd"
 alias ll='ls -al'
 alias tailf='tail -f'
 alias grep='grep --color=always'

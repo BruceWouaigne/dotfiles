@@ -71,6 +71,7 @@ set smartindent   " indents one extra level according to current syntax
 " indents with tab = 4 spaces
 set tabstop=4
 set shiftwidth=4
+autocmd FileType java setlocal shiftwidth=2 tabstop=2
 
 " define shortcuts ',2' and ',4' to change indentation easily:
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
