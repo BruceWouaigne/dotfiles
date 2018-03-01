@@ -50,7 +50,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,twig autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,twig,jinja autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "
 " Coloration
@@ -91,6 +91,7 @@ imap <C-@> <C-Space>
 
 " Use the htmljinja syntax for twig files
 au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.jinja set ft=htmljinja
 
 " Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -102,6 +103,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " Ctags file generator
 nnoremap <F7> :!ctags -h ".php" --PHP-kinds=+cf --regex-php="/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i" --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP
+nnoremap <F8> :!ctags -h ".py" --python-kinds=-i --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --exclude="*/build/*" --languages=Python
 
 autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 
@@ -111,7 +113,10 @@ function! <SID>MkdirsIfNotExists(directory)
     endif
 endfunction
 
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['php'], 'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+nnoremap <F2> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -125,3 +130,7 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+"set -o vi
+"set +o vi
+
