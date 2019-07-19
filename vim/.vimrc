@@ -116,6 +116,7 @@ endfunction
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_open = 0
+let g:syntastic_python_flake8_post_args='--ignore=E501,E402'
 nnoremap <F2> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
