@@ -45,34 +45,31 @@ prompt() {
     PS1="${smiley} \W ${venv}${git}${color_end} "
 }
 
-enablejava12() {
-  sudo mv /Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Info.plist{.disabled,}
-}
+export PATH=$HOME/.jenv/bin:$PATH
+eval "$(jenv init -)"
 
-disablejava12() {
-  sudo mv /Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Info.plist{,.disabled}
-  source ~/.bash_profile
-}
-
-userfrom() {
-  jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq '.'
-  source ~/.bash_profile
-}
+export PHPENV_ROOT=$HOME/.phpenv
+if [ -d "${PHPENV_ROOT}" ]; then
+  export PATH="${PHPENV_ROOT}/bin:${PATH}"
+  eval "$(phpenv init -)"
+fi
 
 loaduserfrom() {
   username=`jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].username'`
   userid=`jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].user_id'`
+  country=`jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].country'`
   jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq '.'
 }
 
-setBruce() {
-  username=$BRUCEUSERNAME
-  userid=$BRUCEUSERID
-}
-
-setPlay() {
-  username=$PLAYUSERNAME
-  userid=$PLAYUSERID
+nameless() {
+  echo "-- hermes --"
+  dig _spotify-$1._hm.services.gew1.spotify.net srv +short
+  dig _spotify-$1._hm.services.gae2.spotify.net srv +short
+  dig _spotify-$1._hm.services.guc3.spotify.net srv +short
+  echo "-- grpc --"
+  dig _spotify-$1._grpc.services.gew1.spotify.net srv +short
+  dig _spotify-$1._grpc.services.gae2.spotify.net srv +short
+  dig _spotify-$1._grpc.services.guc3.spotify.net srv +short
 }
 
 PROMPT_COMMAND=prompt
@@ -88,15 +85,6 @@ export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 #export GREP_OPTIONS='--color=always'
 #export GREP_COLOR='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
-
-export BRUCEUSERID="1090073d1dab4385bf33fb6c6985582e"
-export BRUCEUSERNAME="brucewouaigne"
-export PLAYUSERID="74c49e338d4f419cbec278013286e67f"
-export PLAYUSERNAME="9z6kf7uy83ob54ufa63u5hshn"
-export JOJOUSERID="363b6922b6dd485fb2c6b6517a435d52"
-export JOJOUSERNAME="johpag"
-export JJUSERID="d9d2f87087674cb38abac84b3e5bf514"
-export JJUSERNAME="11131170635"
 
 alias vi='RUBYOPT="-W0" vim'
 alias vim='RUBYOPT="-W0" vim'
@@ -124,3 +112,17 @@ if [ -f '/Users/dcharrier/Downloads/google-cloud-sdk/path.bash.inc' ]; then sour
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dcharrier/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/dcharrier/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.symfony/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Powerline
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh

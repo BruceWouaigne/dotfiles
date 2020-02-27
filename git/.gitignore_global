@@ -7,3 +7,4 @@ chef-client-running.pid
 .DS_Store
 foobar.py
 venv
+.java-version
