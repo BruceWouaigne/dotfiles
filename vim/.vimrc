@@ -1,5 +1,26 @@
-silent! call pathogen#infect()
-silent! call Helptags()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'qpkorr/vim-bufkill'
+Plugin 'sjbach/lusty'
+Plugin 'brucewouaigne/php-getter-setter.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'evidens/vim-twig'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 "
 " General behavior
@@ -36,7 +57,7 @@ if has("gui_running")
     set guioptions -=L
 endif
 
-noremap <C-P> :CommandT<CR>
+"noremap <C-P> :CommandT<CR>
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
