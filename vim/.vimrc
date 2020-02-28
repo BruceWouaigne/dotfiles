@@ -58,6 +58,7 @@ if has("gui_running")
 endif
 
 "noremap <C-P> :CommandT<CR>
+noremap <C-T> :NERDTreeToggle<CR>
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
