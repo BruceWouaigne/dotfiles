@@ -4,11 +4,16 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'sjbach/lusty'
 Plugin 'brucewouaigne/php-getter-setter.vim'
-Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
@@ -18,6 +23,9 @@ Plugin 'evidens/vim-twig'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'BufOnly.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,7 +58,8 @@ set clipboard=unnamed
 let g:gitgutter_escape_grep = 1
 
 if has("gui_running")
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
+    set guifont=SF\ Mono
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
     set guioptions -=m
     set guioptions -=T
     set guioptions -=r
@@ -96,9 +105,12 @@ set expandtab     " converts tabs to spaces
 set autoindent    " automatically copy indentation from previous line
 set smartindent   " indents one extra level according to current syntax
 " indents with tab = 4 spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 autocmd FileType java setlocal shiftwidth=2 tabstop=2
+autocmd FileType ts setlocal shiftwidth=2 tabstop=2
+autocmd FileType tsx setlocal shiftwidth=2 tabstop=2
+autocmd FileType jsx setlocal shiftwidth=2 tabstop=2
 
 " define shortcuts ',2' and ',4' to change indentation easily:
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>

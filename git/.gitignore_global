@@ -8,3 +8,9 @@ chef-client-running.pid
 foobar.py
 venv
 .java-version
+.classpath
+.factorypath
+.project
+.settings
+.idea
+spotify-userinfo-bin
