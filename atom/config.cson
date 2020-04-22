@@ -1,0 +1,17 @@
+"*":
+  "autohide-tree-view": {}
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+  editor:
+    fontFamily: "Droid Sans Mono for Powerline, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 13
+  "exception-reporting":
+    userId: "8acebe79-22a5-4a4d-9541-379703fdfcaf"
+  react:
+    enabledForAllJavascriptFiles: true
+  welcome:
+    showOnStartup: false

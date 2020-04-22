@@ -1,0 +1,9 @@
+blob-store
+compile-cache
+dev
+storage
+packages
+.apm
+.node-gyp
+.npm
+.atom-socket-secret-*
