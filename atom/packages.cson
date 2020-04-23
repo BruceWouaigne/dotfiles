@@ -7,7 +7,6 @@ packages: [
   "ex-mode"
   "monokai"
   "package-sync"
-  "parcel"
   "react"
   "trailing-spaces"
   "vim-mode-plus"

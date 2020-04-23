@@ -16,6 +16,7 @@
     userId: "8acebe79-22a5-4a4d-9541-379703fdfcaf"
   "package-sync":
     createOnChange: true
+    forceOverwrite: true
   react:
     enabledForAllJavascriptFiles: true
   welcome:
