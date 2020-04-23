@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    js: {}
+  "atom-package-sync": {}
   "autohide-tree-view": {}
   core:
     telemetryConsent: "no"
@@ -11,6 +14,8 @@
     fontSize: 13
   "exception-reporting":
     userId: "8acebe79-22a5-4a4d-9541-379703fdfcaf"
+  "package-sync":
+    createOnChange: true
   react:
     enabledForAllJavascriptFiles: true
   welcome:
