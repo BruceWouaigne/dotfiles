@@ -4,6 +4,9 @@
   "atom-package-sync": {}
   "autohide-tree-view": {}
   core:
+    disabledPackages: [
+      "autocomplete-modules"
+    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
