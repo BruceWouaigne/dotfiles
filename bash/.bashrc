@@ -72,6 +72,11 @@ nameless() {
   dig _spotify-$1._grpc.services.guc3.spotify.net srv +short
 }
 
+hostfor() {
+  host=`disco service $1 --protocol grpc | grep --color=never guc | head -n 1 | sed 's/^.*\(ip.*\):.*$/\1/'`
+  echo $host
+}
+
 PROMPT_COMMAND=prompt
 
 if [ -f ~/dotfiles/git/git-completion.bash ]; then
@@ -107,12 +112,6 @@ alias postgres.stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias postgres.restart='postgres.stop && postgres.start'
 alias ggrep='git grep'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dcharrier/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/dcharrier/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dcharrier/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/dcharrier/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -128,3 +127,10 @@ POWERLINE_BASH_SELECT=1
 source /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dcharrier/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dcharrier/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dcharrier/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dcharrier/google-cloud-sdk/completion.bash.inc'; fi
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"

@@ -13,4 +13,5 @@ venv
 .project
 .settings
 .idea
+*.iml
 spotify-userinfo-bin
