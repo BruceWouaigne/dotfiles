@@ -12,7 +12,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'qpkorr/vim-bufkill'
-Plugin 'sjbach/lusty'
+"Plugin 'sjbach/lusty'
 Plugin 'brucewouaigne/php-getter-setter.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
@@ -81,9 +81,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
 " powerline
-set rtp+=/usr/local/lib/python3.7/site-packages/powerline/bindings/vim
+"set rtp+=/usr/local/lib/python3.7/site-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
+source /Users/dcharrier/Library/Python/3.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,twig,jinja autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))

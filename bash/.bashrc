@@ -120,11 +120,7 @@ export PATH="$HOME/.symfony/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-source /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+export POWERLINE_HOME=/Users/dcharrier/Library/Python/3.7/lib/python/site-packages/powerline
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -134,3 +130,8 @@ if [ -f '/Users/dcharrier/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dcha
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dcharrier/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dcharrier/google-cloud-sdk/completion.bash.inc'; fi
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+eval "$(pyenv init -)"
+
