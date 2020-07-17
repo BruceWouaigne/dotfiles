@@ -80,7 +80,7 @@ hostfor() {
 PROMPT_COMMAND=prompt
 
 if [ -f ~/dotfiles/git/git-completion.bash ]; then
-    . ~/dotfiles/git/git-completion.bash
+    source ~/dotfiles/git/git-completion.bash
 fi
 
 export ANDROID_HOME=/Users/dcharrier/Library/Android/sdk
