@@ -1,23 +1,23 @@
 [alias]
-    st = status
+  st = status
 [color]
-    ui = true
+  ui = true
 [user]
-    name = dcharrier
-    email = dcharrier@spotify.com
+	name = dcharrier
+	email = dcharrier@spotify.com
 [core]
-    excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [web]
-    browser = chrome
+  browser = chrome
 [mergetool]
-    keepTemporaries = false
+  keepTemporaries = false
 [merge]
   tool = meld
 [mergetool]
   prompt = false
 [mergetool "meld"]
   trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
+  cmd = open -W -a Meld --args \"$([[ "$LOCAL" == /* ]] && echo "$LOCAL" || echo "$PWD/$LOCAL")\"  \"$([[ "$BASE" == /* ]] && echo "$BASE" || echo "$PWD/$BASE")\" \"$([[ "$REMOTE" == /* ]] && echo "$REMOTE" || echo "$PWD/$REMOTE")\"
 [pull]
   ff = true
-	rebase = false
+  rebase = false

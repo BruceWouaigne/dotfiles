@@ -48,17 +48,17 @@ prompt() {
 export PATH=$HOME/.jenv/bin:$PATH
 eval "$(jenv init -)"
 
-export PHPENV_ROOT=$HOME/.phpenv
+export PHPENV_ROOT="/usr/local/bin/phpenv"
 if [ -d "${PHPENV_ROOT}" ]; then
   export PATH="${PHPENV_ROOT}/bin:${PATH}"
   eval "$(phpenv init -)"
 fi
 
 loaduserfrom() {
-  username=`jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].username'`
-  userid=`jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].user_id'`
-  country=`jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].country'`
-  jhurl -s services.guc3.spotify.net "hm://userdata/account?$1=$2" -p | jq '.'
+  username=`jhurl -s services.gew1.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].username'`
+  userid=`jhurl -s services.gew1.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].user_id'`
+  country=`jhurl -s services.gew1.spotify.net "hm://userdata/account?$1=$2" -p | jq -r '.[0].country'`
+  jhurl -s services.gew1.spotify.net "hm://userdata/account?$1=$2" -p | jq '.'
 }
 
 nameless() {
@@ -73,7 +73,7 @@ nameless() {
 }
 
 hostfor() {
-  host=`disco service $1 --protocol grpc | grep --color=never guc | head -n 1 | sed 's/^.*\(ip.*\):.*$/\1/'`
+  host=`disco service $1 --protocol grpc | grep --color=never gew | head -n 1 | sed 's/^.*\(ip.*\):.*$/\1/'`
   echo $host
 }
 
@@ -135,3 +135,4 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 eval "$(pyenv init -)"
 
+eval "$(thefuck --alias)"

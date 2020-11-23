@@ -1,2 +1,6 @@
 set visualbell
 set noerrorbells
+set incsearch
+set hls
+set clipboard+=unnamed
+set ignorecase smartcase

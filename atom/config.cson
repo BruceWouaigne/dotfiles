@@ -1,9 +1,42 @@
 "*":
   "atom-beautify":
+    general: {}
+    html:
+      beautify_on_save: true
     js: {}
+    json:
+      beautify_on_save: true
+    php:
+      beautify_on_save: true
+    python:
+      beautify_on_save: true
+    twig:
+      beautify_on_save: true
   "atom-package-sync": {}
+  "autoclose-html":
+    neverClose: [
+      "br"
+      "hr"
+      "img"
+      "input"
+      "link"
+      "meta"
+      "area"
+      "base"
+      "col"
+      "command"
+      "embed"
+      "keygen"
+      "param"
+      "source"
+      "track"
+      "wbr"
+      "dvd"
+    ]
   "autohide-tree-view": {}
   core:
+    allowPendingPaneItems: false
+    audioBeep: false
     disabledPackages: [
       "autocomplete-modules"
     ]
@@ -13,14 +46,43 @@
       "monokai"
     ]
   editor:
+    atomicSoftTabs: false
     fontFamily: "Droid Sans Mono for Powerline, Menlo, Consolas, DejaVu Sans Mono, monospace"
-    fontSize: 13
+    fontSize: 12
+    tabType: "soft"
   "exception-reporting":
     userId: "8acebe79-22a5-4a4d-9541-379703fdfcaf"
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "php-getters-setters":
+    getterTemplate: '''
+      %scope% function %methodName%()
+      {
+          return $this->%variable%;
+      }
+      
+      
+    '''
+    setterTemplate: '''
+      %scope% function %methodName%(%typeHint%$%variable%)
+      {
+          $this->%variable% = $%variable%;
+      
+          return $this;
+      }
+      
+      
+    '''
   react:
     enabledForAllJavascriptFiles: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    useSmartcaseForFind: true
+    useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
+".html.php.text":
+  editor:
+    tabLength: 4
