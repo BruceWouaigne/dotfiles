@@ -44,7 +44,7 @@
     'prefix': 'dvd',
     'body': 'die(var_dump($0));'
 
-'.text.html, .source.js.jsx':
+'.text.html, .source.js.jsx, .source.ts':
   'dvd':
     'prefix': 'dvd'
     'body': 'console.log($0);'

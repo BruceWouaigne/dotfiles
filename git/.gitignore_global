@@ -15,3 +15,4 @@ venv
 .idea
 *.iml
 spotify-userinfo-bin
+.vscode

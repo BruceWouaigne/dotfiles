@@ -133,6 +133,8 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+export SPOTIFY_DOMAIN=gew1.spotify.net
+
 eval "$(pyenv init -)"
 
 eval "$(thefuck --alias)"
